@@ -1,0 +1,14 @@
+.daily-times .delete-time-data {
+  color: #e60000;
+}
+.daily-times .delete-time-data:hover {
+  color: #b30000;
+}
+body {
+  font-family: Courier;
+}
+.btn-rounding {
+  font-weight: bold;
+  margin-top: 20px;
+  width: 200px;
+}

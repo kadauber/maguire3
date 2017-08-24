@@ -1,0 +1,6 @@
+.daily-times .delete-time-data {
+  color: #e60000;
+}
+.daily-times .delete-time-data:hover {
+  color: #b30000;
+}

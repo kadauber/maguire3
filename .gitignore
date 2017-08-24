@@ -2,3 +2,6 @@ app/**/*.js
 app/**/*.map
 typings
 node_modules
+.DS_STORE
+*.sublime-project
+*.sublime-workspace

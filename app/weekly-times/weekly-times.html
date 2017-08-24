@@ -1,0 +1,35 @@
+<div class="weekly-times">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>This week's time</h2>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-success btn-rounding pull-right" ng-if="!wtCtrl.round" ng-click="wtCtrl.round = true">Start rounding</button>
+            <button class="btn btn-danger btn-rounding pull-right" ng-if="wtCtrl.round" ng-click="wtCtrl.round = false">Stop rounding</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>Day</th>
+                    <th>Total Time</th>
+                    <th>Regular Time</th>
+                    <th>Overtime</th>
+                </tr>
+                <tr ng-repeat="dayData in wtCtrl.weekData">
+                    <td>{{ dayData.dayName }}</td>
+                    <td>{{ dayData.totalTime }}</td>
+                    <td>{{ dayData.regularTime }}</td>
+                    <td>{{ dayData.overtime }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>{{ wtCtrl.getWeekTotal() }}</strong></td>
+                    <td><strong>{{ wtCtrl.getRegularTotal() }}</strong></td>
+                    <td><strong>{{ wtCtrl.getOvertimeTotal() }}</strong></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="daily-times">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Today's time</h2>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-success btn-rounding pull-right" ng-if="!dtCtrl.round" ng-click="dtCtrl.round = true">Start rounding</button>
+            <button class="btn btn-danger btn-rounding pull-right" ng-if="dtCtrl.round" ng-click="dtCtrl.round = false">Stop rounding</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>Task</th>
+                    <th>Clocked in time</th>
+                    <th>Clocked out time</th>
+                    <th>Time difference</th>
+                    <th>Cumulative time</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="timeData in dtCtrl.dayData track by $index">
+                    <td>{{ timeData.task }}</td>
+                    <td>{{ timeData.clockInTime }}</td>
+                    <td>{{ timeData.clockOutTime }}</td>
+                    <td>{{ dtCtrl.maguireService.getTimeDifference(timeData.clockInTime, timeData.clockOutTime, dtCtrl.round) }}</td>
+                    <td>{{ dtCtrl.getCumulativeTime($index) }}</td>
+                    <td>
+                        <a href="" class="delete-time-data" ng-click="dtCtrl.deleteTimeData($index)">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
